@@ -13,11 +13,11 @@ To crawl
 
 List all news
 
-    curl http://54.179.134.54/news
+    curl http://ec2-52-221-187-243.ap-southeast-1.compute.amazonaws.com/news
 
 Search specific news
 
-    curl http://54.179.134.54/news/<keyword>
+    curl http://ec2-52-221-187-243.ap-southeast-1.compute.amazonaws.com/news/<keyword>
 
 **TODO**
 
