@@ -1,0 +1,3 @@
+mongo:
+  uri: "mongodb://mybbcspiderman:alfiCeNtAncErAnidELe@aws-ap-southeast-1-portal.1.dblayer.com:15957,aws-ap-southeast-1-portal.0.dblayer.com:15957/bbcspider?ssl=true"
+  db: "bbcspider"
