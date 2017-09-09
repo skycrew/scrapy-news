@@ -6,6 +6,7 @@ Scrapy-News
  2. WebServices is included and hosted using amazon ec2
 
 **Usage**
+
 To crawl
 
     scrapy crawl bbcspider
@@ -22,6 +23,7 @@ Search specific news
 
  1. Unit tests
  2. Add more fields
+ 3. Automate crawler by cron
 
 **Limitation**
 Time!
