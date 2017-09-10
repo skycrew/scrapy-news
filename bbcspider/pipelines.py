@@ -2,6 +2,7 @@
 
 import pymongo
 from ssl import CERT_NONE
+from hashlib import sha256
 from scrapy.exceptions import DropItem
 
 
@@ -35,5 +36,13 @@ class MongoPipeline(object):
         if type(item["title"]) == list:
             item["title"] = item["title"][0]
 
-        self.db.news.insert_one(dict(item))
+        items = dict(item)
+        items["checksum"] = sha256(item["body"]).hexdigest()
+
+        # drop item if document exist
+        query = {"checksum": items["checksum"]}
+        if self.db.news.find(query).limit(1).count() > 0:
+            raise DropItem("News exist")
+
+        self.db.news.insert_one(items)
         return item
